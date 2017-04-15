@@ -1,14 +1,5 @@
 <resources>
-    <string-array name="rooms_array">
-        <item>Living Room</item>
-        <item>Kitchen</item>
-        <item>Dining Room</item>
-        <item>Master Bedroom</item>
-        <item>Bedroom 1</item>
-        <item>Bedroom 2</item>
-        <item>Bedroom 3</item>
-        <item>Bedroom 4</item>
-    </string-array>
+
 
     <string name="app_name">Energy Saver</string>
 
