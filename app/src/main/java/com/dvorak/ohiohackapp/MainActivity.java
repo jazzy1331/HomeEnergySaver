@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity
     private String SP_NAME = "cbushackpref";
     private SharedPreferences sp;
 
+    private double kwhUsage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -145,19 +147,31 @@ public class MainActivity extends AppCompatActivity
 
         double elapsedTimeHours = elapsedTimeSecs / 3600;
 
-        double kwhUsage = 0;
+        kwhUsage = Double.parseDouble(sp.getString(roomId + "current", "0"));
+        double daily = Double.parseDouble(sp.getString("day", "0"));
 
         if(roomId.equals("LR")){
-            kwhUsage = elapsedTimeHours * .44;
+            kwhUsage += elapsedTimeHours * .44;
         }else if(roomId.equals("K")){
-            kwhUsage = elapsedTimeHours * .7836;
+            kwhUsage += elapsedTimeHours * .7836;
         }else if(roomId.equals("DR")){
-            kwhUsage = elapsedTimeHours * .24;
+            kwhUsage += elapsedTimeHours * .24;
         }else if(roomId.contains("B")){
-            kwhUsage = elapsedTimeHours *.44;
+            kwhUsage += elapsedTimeHours *.44;
         }
 
+        daily += kwhUsage;
 
+        editor.putString("daily", Double.toString(daily));
 
+        editor.putString(roomId + "current", Double.toString(kwhUsage));
+
+//        MoreInfoActivity moreInfoActivity = new MoreInfoActivity();
+//        moreInfoActivity.forceCall();
+
+    }
+
+    public double getKwhUsage(){
+        return kwhUsage;
     }
 }
