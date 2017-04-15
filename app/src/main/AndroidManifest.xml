@@ -19,9 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".InfoPageActivity"
             android:label="Info">
+        </activity>
 
+        <activity android:name=".MoreInfoActivity"
+            android:label="More Info">
         </activity>
     </application>
 
