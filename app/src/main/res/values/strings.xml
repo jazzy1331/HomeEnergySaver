@@ -5,4 +5,15 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string-array name="rooms_array">
+        <item>Living Room</item>
+        <item>Kitchen</item>
+        <item>Dining Room</item>
+        <item>Master Bedroom</item>
+        <item>Bedroom 1</item>
+        <item>Bedroom 2</item>
+        <item>Bedroom 3</item>
+        <item>Bedroom 4</item>
+    </string-array>
 </resources>

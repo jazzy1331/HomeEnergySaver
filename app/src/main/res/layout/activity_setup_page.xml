@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dvorak.ohiohackapp.SetupPage">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please select all roooms applicable to your house"
+        android:textColor="#000000" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LR"
+        android:onClick="onCheckboxClicked"
+        android:text="Living Room" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:id="@+id/K"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:text="Kitchen" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:id="@+id/DR"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:text="Dining Room" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:id="@+id/BM"
+        android:text="Master Bedroom" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:id="@+id/B1"
+        android:text="Bedroom 1" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:id="@+id/B2"
+        android:text="Bedroom 2" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:id="@+id/B3"
+        android:text="Bedroom 3" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/B4"
+        android:onClick="onCheckboxClicked"
+        android:text="Bedroom 4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onNextPageClicked"
+        android:text="Next Page"/>
+
+</LinearLayout>
