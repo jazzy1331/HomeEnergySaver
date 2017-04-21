@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity
     private String SP_NAME = "cbushackpref";
     private SharedPreferences sp;
 
+    private String room;
+
     private double kwhUsage;
 
     @Override
@@ -90,6 +92,10 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    public void onEnter(View view){
+        changeState(room);
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -98,23 +104,37 @@ public class MainActivity extends AppCompatActivity
         switch (i) {
             case 0:
                 room = "LR";
+                break;
             case 1:
                 room = "K";
+                break;
             case 2:
                 room = "DR";
+                break;
             case 3:
                 room = "BM";
+                break;
             case 4:
                 room = "B1";
+                break;
             case 5:
                 room = "B2";
+                break;
             case 6:
                 room = "B3";
+                break;
             case 7:
                 room = "B4";
+                break;
+            default:
+                room = "Hello World";
         }
 
-        changeState(room);
+
+
+        this.room = room;
+
+       // changeState(room);
 
 
     }
@@ -150,13 +170,13 @@ public class MainActivity extends AppCompatActivity
         kwhUsage = Double.parseDouble(sp.getString(roomId + "current", "0"));
         double daily = Double.parseDouble(sp.getString("day", "0"));
 
-        if(roomId.equals("LR")){
+        if(roomId == "LR"){
             kwhUsage += elapsedTimeHours * .44;
-        }else if(roomId.equals("K")){
+        }else if(roomId == "K"){
             kwhUsage += elapsedTimeHours * .7836;
-        }else if(roomId.equals("DR")){
+        }else if(roomId == "DR"){
             kwhUsage += elapsedTimeHours * .24;
-        }else if(roomId.contains("B")){
+        }else if(roomId.substring(0,1) == "B"){
             kwhUsage += elapsedTimeHours *.44;
         }
 
